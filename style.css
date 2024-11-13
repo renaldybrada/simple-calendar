@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orangered;
+    min-height: 100vh;
+}
+
+.wrapper {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 10px 20px;
+    width: 400px;
+    height: 450px;
+}
+
+.wrapper header {
+    display: flex;
+    align-items: center;
+    padding: 20px 25px 20px;
+    justify-content: space-between;
+}
+
+header .navigator {
+    cursor: pointer;
+}
+
+#active-month {
+    font-size: 1.5rem;
+}
+
+.calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.weeks li {
+    font-weight: bold;
+}
+
+.calendar .holiday {
+    color: red;
+}
+
+.calendar .inactive {
+    opacity: .3;
+}
+
+.days li {
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+.calendar ul li {
+    position: relative;
+    width: calc(100% / 7);
+}
+
+.calendar .days li::before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.days li:hover::before{
+    background-color: whitesmoke;
+}
+
+.days li.today::before{
+    background-color: orangered;
+}
